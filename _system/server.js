@@ -1680,8 +1680,10 @@ function purgeOldTrash() {
 }
 // Also once at start-up: the server usually runs only while the PC is on, so
 // a 24-hour timer alone never fired and the trash was never emptied.
-setTimeout(purgeOldTrash, 10000);
-setInterval(purgeOldTrash, 24 * 60 * 60 * 1000);
+if (!process.env.VERCEL && !process.env.SERVERLESS) {
+  setTimeout(purgeOldTrash, 10000);
+  setInterval(purgeOldTrash, 24 * 60 * 60 * 1000);
+}
 
 // v1.10.0 — Health-check endpoint moved here (was registered AFTER the
 // SPA catch-all → every GET /api/health returned "No such endpoint" →

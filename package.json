@@ -5,7 +5,7 @@
   "type": "module",
   "main": "api/index.js",
   "scripts": {
-    "build": "cd _system && npm run build",
+    "build": "node scripts/sync-dist.mjs",
     "start": "cd _system && npm start",
     "test": "cd _system && npm test"
   },
