@@ -1,0 +1,26 @@
+{
+  "name": "free-gst-billing-software",
+  "version": "1.10.82",
+  "description": "Free, open-source GST invoice & billing software for India. 100% offline-first PWA, multi-currency, GSTR-1, GSTR-3B, GSTR-2B reconciliation, TDS / TCS.",
+  "type": "module",
+  "main": "api/index.js",
+  "scripts": {
+    "build": "cd _system && npm run build",
+    "start": "cd _system && npm start",
+    "test": "cd _system && npm test"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dompurify": "^3.4.17",
+    "express": "^5.2.1",
+    "fflate": "^0.8.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.577.0",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tesseract.js": "^7.0.0"
+  }
+}
