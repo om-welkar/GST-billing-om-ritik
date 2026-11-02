@@ -1,13 +1,44 @@
 {
   "version": 2,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/_system/dist/$1"
+      "src": "/assets/(.*)",
+      "dest": "/_system/dist/assets/$1"
+    },
+    {
+      "src": "/icons/(.*)",
+      "dest": "/_system/dist/icons/$1"
+    },
+    {
+      "src": "/tesseract/(.*)",
+      "dest": "/_system/dist/tesseract/$1"
+    },
+    {
+      "src": "/favicon.svg",
+      "dest": "/_system/dist/favicon.svg"
+    },
+    {
+      "src": "/manifest.webmanifest",
+      "dest": "/_system/dist/manifest.webmanifest"
+    },
+    {
+      "src": "/sw.js",
+      "dest": "/_system/dist/sw.js"
+    },
+    {
+      "src": "/browser-storage.js",
+      "dest": "/_system/dist/browser-storage.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/_system/dist/index.html"
     }
   ]
 }

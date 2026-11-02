@@ -1427,11 +1427,13 @@ function runDailyBackup() {
   }
 }
 
-setTimeout(runDailyBackup, 5000);
-// Checked every hour (it does nothing once today's backup exists), so a PC
-// left on overnight gets the new day's backup soon after midnight rather
-// than up to 24 hours later.
-setInterval(runDailyBackup, 60 * 60 * 1000);
+if (!process.env.VERCEL && !process.env.SERVERLESS) {
+  setTimeout(runDailyBackup, 5000);
+  // Checked every hour (it does nothing once today's backup exists), so a PC
+  // left on overnight gets the new day's backup soon after midnight rather
+  // than up to 24 hours later.
+  setInterval(runDailyBackup, 60 * 60 * 1000);
+}
 
 // Backup management endpoints
 app.get('/api/backups', (req, res) => {
